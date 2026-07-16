@@ -1,0 +1,3 @@
+D:/IdleHands/build/CMakeFiles/IdleHands.dir
+D:/IdleHands/build/CMakeFiles/edit_cache.dir
+D:/IdleHands/build/CMakeFiles/rebuild_cache.dir

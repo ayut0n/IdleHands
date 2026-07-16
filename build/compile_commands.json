@@ -1,0 +1,50 @@
+[
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\main.cpp.obj -c D:\\IdleHands\\main.cpp",
+  "file": "D:/IdleHands/main.cpp",
+  "output": "CMakeFiles/IdleHands.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui.cpp.obj -c D:\\IdleHands\\imgui\\imgui.cpp",
+  "file": "D:/IdleHands/imgui/imgui.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_demo.cpp.obj -c D:\\IdleHands\\imgui\\imgui_demo.cpp",
+  "file": "D:/IdleHands/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_demo.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_draw.cpp.obj -c D:\\IdleHands\\imgui\\imgui_draw.cpp",
+  "file": "D:/IdleHands/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_draw.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_impl_glfw.cpp.obj -c D:\\IdleHands\\imgui\\imgui_impl_glfw.cpp",
+  "file": "D:/IdleHands/imgui/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_impl_glfw.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_impl_opengl3.cpp.obj -c D:\\IdleHands\\imgui\\imgui_impl_opengl3.cpp",
+  "file": "D:/IdleHands/imgui/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_impl_opengl3.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_tables.cpp.obj -c D:\\IdleHands\\imgui\\imgui_tables.cpp",
+  "file": "D:/IdleHands/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_tables.cpp.obj"
+},
+{
+  "directory": "D:/IdleHands/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles\\IdleHands.dir\\includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\IdleHands.dir\\imgui\\imgui_widgets.cpp.obj -c D:\\IdleHands\\imgui\\imgui_widgets.cpp",
+  "file": "D:/IdleHands/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/IdleHands.dir/imgui/imgui_widgets.cpp.obj"
+}
+]
