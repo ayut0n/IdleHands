@@ -2,7 +2,6 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-// Поддержка нативных функций Windows
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
@@ -21,14 +20,11 @@
 #include <cctype>
 #include <ctime>
 
-// Подключение библиотеки для загрузки картинок
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-// Подключение Discord RPC
 #include "discord_rpc.h"
 
-// Структура аккаунта Steam
 struct SteamAccount {
     std::string steamID64;
     std::string accountName;
@@ -36,13 +32,11 @@ struct SteamAccount {
     GLuint avatarTex = 0; 
 };
 
-// Глобальные настройки
 float accentColor[3] = { 0.2f, 0.6f, 1.0f };
 bool isEnglish = false;
 bool invisibleStart = false;
 std::vector<SteamAccount> accounts;
 
-// --- ТРЕЙ ---
 #define WM_TRAYICON (WM_USER + 1)
 NOTIFYICONDATA nid = {};
 WNDPROC originalWndProc = nullptr;
@@ -59,10 +53,8 @@ LRESULT CALLBACK WindowProcHook(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPar
     }
     return CallWindowProc(originalWndProc, hwnd, uMsg, wParam, lParam);
 }
-// -------------
 
-// --- DISCORD RPC ---
-const char* DISCORD_CLIENT_ID = "1527266005532020869"; // ЗАМЕНИТЕ НА СВОЙ ID ИЗ DISCORD DEVELOPER PORTAL
+const char* DISCORD_CLIENT_ID = "1527266005532020869";
 
 void InitDiscord() {
     DiscordEventHandlers handlers;
@@ -81,7 +73,6 @@ void UpdateDiscordPresence(const std::string& state, const std::string& details)
     
     Discord_UpdatePresence(&discordPresence);
 }
-// -------------------
 
 void SaveConfig() {
     std::ofstream file("idlehands_config.txt");
@@ -374,7 +365,6 @@ int main() {
     HWND hwnd = glfwGetWin32Window(window);
     originalWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WindowProcHook);
 
-    // Усиленная загрузка иконок с принудительным качественным сглаживанием (LR_CREATEDIBSECTION)
     HICON hIconBig = (HICON)LoadImageA(GetModuleHandle(NULL), MAKEINTRESOURCEA(1), IMAGE_ICON, 
                                        GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON), 
                                        LR_SHARED | LR_CREATEDIBSECTION);
@@ -383,7 +373,6 @@ int main() {
                                          GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON), 
                                          LR_SHARED | LR_CREATEDIBSECTION);
 
-    // Запасной вариант, если в resource.rc написано IDI_ICON1 вместо 1
     if (!hIconBig) hIconBig = (HICON)LoadImageA(GetModuleHandle(NULL), "IDI_ICON1", IMAGE_ICON, 
                                                 GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON), 
                                                 LR_SHARED | LR_CREATEDIBSECTION);
@@ -392,7 +381,6 @@ int main() {
                                                     GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON), 
                                                     LR_SHARED | LR_CREATEDIBSECTION);
 
-    // Устанавливаем иконки для окна (Alt+Tab и панель задач)
     SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIconBig);
     SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hIconSmall);
 
@@ -401,7 +389,6 @@ int main() {
     nid.uID = 1001;
     nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
     nid.uCallbackMessage = WM_TRAYICON;
-    // Устанавливаем иконку для трея
     nid.hIcon = hIconSmall ? hIconSmall : LoadIcon(NULL, IDI_APPLICATION);
     strcpy(nid.szTip, "IdleHands");
     Shell_NotifyIcon(NIM_ADD, &nid);
@@ -483,7 +470,6 @@ int main() {
         ImGui::SetNextWindowSize(io.DisplaySize);
         ImGui::Begin("Main", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
 
-        // --- КАСТОМНЫЙ ЗАГОЛОВОК ОКНА ---
         ImGui::SetCursorPos(ImVec2(0, 0));
         ImGui::InvisibleButton("DragArea", ImVec2(io.DisplaySize.x - 70, 30));
         if (ImGui::IsItemHovered() && ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
@@ -508,8 +494,7 @@ int main() {
 
         ImGui::SetCursorPos(ImVec2(0, 30));
         ImGui::Separator();
-        // --------------------------------
-
+        
         if (showMain) {
             ImGui::SetCursorPos(ImVec2(8, 40));
             if (ImGui::BeginTabBar("MainTabs")) {
