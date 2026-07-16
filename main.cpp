@@ -62,7 +62,7 @@ LRESULT CALLBACK WindowProcHook(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 // -------------
 
 // --- DISCORD RPC ---
-const char* DISCORD_CLIENT_ID = "123456789012345678"; // ЗАМЕНИТЕ НА СВОЙ ID ИЗ DISCORD DEVELOPER PORTAL
+const char* DISCORD_CLIENT_ID = "1527266005532020869"; // ЗАМЕНИТЕ НА СВОЙ ID ИЗ DISCORD DEVELOPER PORTAL
 
 void InitDiscord() {
     DiscordEventHandlers handlers;
